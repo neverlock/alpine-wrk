@@ -9,7 +9,7 @@ RUN git clone https://github.com/wg/wrk.git
 WORKDIR /root/wrk
 RUN make \
         && mv /root/wrk/wrk /usr/local/bin \
-        && rm -rf /root/wrk
+        && rm -rf /root/wrk \
         && apk del --purge alpine-sdk \
         && apk add libgcc
 CMD ["/usr/local/bin/wrk"]
